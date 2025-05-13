@@ -6,15 +6,15 @@
 )*/   
 import db from "@/lib/db"
 export default async () => {
-    const alunos = await db.query("select * from aluno")
+    const alunos = await db.query("select * from usuario")
  return (<>
-    <h1>Lista de alunos</h1>
+    <h1>Lista de usuários</h1>
     <div>
       {
          alunos.rows.map( 
             a => (
                <div>
-                  {a.name} faz parte do projeto {a.project}
+                  {a.nome} faz parte do projeto {a.cargo}
                </div>
             ) 
          )
